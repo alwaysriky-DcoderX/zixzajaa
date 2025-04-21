@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanzz Shop - Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #111;
+            color: white;
+        }
+        .banner {
+            width: 100%;
+            height: auto;
+        }
+        .card {
+            background-color: #222;
+            color: white;
+            border: none;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .btn-primary { background-color: #007bff; }
+        .btn-success { background-color: #28a745; }
+        .product { display: none; }
+        .product.all { display: block; }
+    </style>
+</head>
+<body>
+    <header class="text-center py-3 bg-dark text-white">
+        <h1>Vanzz - Store</h1>
+    </header>
+    
+    <div class="container text-center mt-3">
+        <img src="https://files.catbox.moe/04pp9q.jpg" alt="Banner" class="banner">
+    </div>
+    
+    <div class="container mt-4">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search">
+            <button class="btn btn-success">Search</button>
+            <button class="btn btn-danger">Reset</button>
+        </div>
+    </div>
+
+    <div class="container text-center mb-3">
+        <button class="btn btn-primary filter" data-category="all">All</button>
+        <button class="btn btn-primary filter" data-category="vps">VPS</button>
+        <button class="btn btn-primary filter" data-category="hosting">Hosting</button>
+        <button class="btn btn-primary filter" data-category="sosmed">Sosmed</button>
+        <button class="btn btn-primary filter" data-category="script">Script</button>
+        <button class="btn btn-primary filter" data-category="private">Private</button>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 product all vps">
+                <div class="card p-3">
+                    <img src="https://files.catbox.moe/04pp9q.jpg" class="card-img-top" alt="VPS">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">VPS</h5>
+                        <p class="card-text">Rp 10.000</p>
+                        <button class="btn btn-primary read-more" data-title="VPS" data-desc="Virtual Private Server dengan performa tinggi dan harga terjangkau.">Read More</button>
+                        <a href="https://wa.me/6288276746473?text=Saya%20ingin%20memesan%20VPS" class="btn btn-success">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="col-md-3 product all hosting">
+    <div class="card p-3">
+        <img src="https://files.catbox.moe/04pp9q.jpg" class="card-img-top" alt="Hosting">
+        <div class="card-body text-center">
+            <h5 class="card-title">Hosting</h5>
+            <p class="card-text">Rp 20.000</p>
+            <button class="btn btn-primary read-more" data-title="Hosting" data-desc="Layanan hosting dengan performa cepat dan harga terjangkau. Cocok untuk website pribadi dan bisnis.">Read More</button>
+            <a href="https://wa.me/6288276746473?text=Saya%20ingin%20memesan%20Hosting" class="btn btn-success">Order Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 product all sosmed">
+    <div class="card p-3">
+        <img src="https://files.catbox.moe/04pp9q.jpg" class="card-img-top" alt="Sosmed">
+        <div class="card-body text-center">
+            <h5 class="card-title">Sosmed</h5>
+            <p class="card-text">Rp 15.000</p>
+            <button class="btn btn-primary read-more" data-title="Sosmed" data-desc="Layanan optimasi media sosial untuk meningkatkan visibilitas dan interaksi akun Anda.">Read More</button>
+            <a href="https://wa.me/6288276746473?text=Saya%20ingin%20memesan%20Sosmed" class="btn btn-success">Order Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 product all script">
+    <div class="card p-3">
+        <img src="https://files.catbox.moe/04pp9q.jpg" class="card-img-top" alt="Script">
+        <div class="card-body text-center">
+            <h5 class="card-title">Script</h5>
+            <p class="card-text">Rp 30.000</p>
+            <button class="btn btn-primary read-more" data-title="Script" data-desc="Kumpulan script dengan berbagai fitur untuk mempermudah manajemen sistem dan website.">Read More</button>
+            <a href="https://wa.me/6288276746473?text=Saya%20ingin%20memesan%20Script" class="btn btn-success">Order Now</a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-3 product all private">
+    <div class="card p-3">
+        <img src="https://files.catbox.moe/04pp9q.jpg" class="card-img-top" alt="Private">
+        <div class="card-body text-center">
+            <h5 class="card-title">Private</h5>
+            <p class="card-text">Rp 50.000</p>
+            <button class="btn btn-primary read-more" data-title="Private" data-desc="Layanan eksklusif yang menyediakan akses pribadi dan khusus sesuai kebutuhan Anda.">Read More</button>
+            <a href="https://wa.me/6288276746473?text=Saya%20ingin%20memesan%20Private" class="btn btn-success">Order Now</a>
+        </div>
+    </div>
+</div>
+
+    <script>
+        $(document).ready(function() {
+            $('.filter').click(function() {
+                let category = $(this).data('category');
+                $('.product').hide();
+                $('.' + category).fadeIn();
+            });
+
+            $('.read-more').click(function() {
+                let title = $(this).data('title');
+                let desc = $(this).data('desc');
+                $('#modalTitle').text(title);
+                $('#modalBody').text(desc);
+                $('#productModal').modal('show');
+            });
+        });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
